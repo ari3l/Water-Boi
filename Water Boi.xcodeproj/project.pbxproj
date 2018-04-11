@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B06E8F7A207AA8920030408C /* TemplateApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemplateApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B06E8F7A207AA8920030408C /* Water Boi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Water Boi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06E8F7D207AA8920030408C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B06E8F7F207AA8920030408C /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		B06E8F84207AA8940030408C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 		B06E8F7B207AA8920030408C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B06E8F7A207AA8920030408C /* TemplateApp.app */,
+				B06E8F7A207AA8920030408C /* Water Boi.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,9 +107,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B06E8F79207AA8920030408C /* TemplateApp */ = {
+		B06E8F79207AA8920030408C /* Water Boi */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B06E8F8C207AA8940030408C /* Build configuration list for PBXNativeTarget "TemplateApp" */;
+			buildConfigurationList = B06E8F8C207AA8940030408C /* Build configuration list for PBXNativeTarget "Water Boi" */;
 			buildPhases = (
 				B06E8F76207AA8920030408C /* Sources */,
 				B06E8F77207AA8920030408C /* Frameworks */,
@@ -121,9 +121,9 @@
 			);
 			dependencies = (
 			);
-			name = TemplateApp;
+			name = "Water Boi";
 			productName = TemplateApp;
-			productReference = B06E8F7A207AA8920030408C /* TemplateApp.app */;
+			productReference = B06E8F7A207AA8920030408C /* Water Boi.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -141,7 +141,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B06E8F75207AA8920030408C /* Build configuration list for PBXProject "TemplateApp" */;
+			buildConfigurationList = B06E8F75207AA8920030408C /* Build configuration list for PBXProject "Water Boi" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -154,7 +154,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B06E8F79207AA8920030408C /* TemplateApp */,
+				B06E8F79207AA8920030408C /* Water Boi */,
 			);
 		};
 /* End PBXProject section */
@@ -393,7 +393,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B06E8F75207AA8920030408C /* Build configuration list for PBXProject "TemplateApp" */ = {
+		B06E8F75207AA8920030408C /* Build configuration list for PBXProject "Water Boi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B06E8F8A207AA8940030408C /* Debug */,
@@ -402,7 +402,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B06E8F8C207AA8940030408C /* Build configuration list for PBXNativeTarget "TemplateApp" */ = {
+		B06E8F8C207AA8940030408C /* Build configuration list for PBXNativeTarget "Water Boi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B06E8F8D207AA8940030408C /* Debug */,
