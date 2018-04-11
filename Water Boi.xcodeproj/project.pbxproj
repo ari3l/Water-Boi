@@ -17,6 +17,8 @@
 		B06E8F99207AD29E0030408C /* Dwifft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06E8F98207AD29E0030408C /* Dwifft.framework */; };
 		B06E8F9D207AD3310030408C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06E8F9C207AD3310030408C /* Person.swift */; };
 		B06E8FA2207AF2890030408C /* VCListingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06E8FA1207AF2890030408C /* VCListingTableViewController.swift */; };
+		B0DD52C3207EB90D00A70BBA /* WaterQualityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD52C1207EB90D00A70BBA /* WaterQualityViewController.swift */; };
+		B0DD52C4207EB90D00A70BBA /* WaterQualityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0DD52C2207EB90D00A70BBA /* WaterQualityViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		B06E8F98207AD29E0030408C /* Dwifft.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dwifft.framework; path = Carthage/Build/iOS/Dwifft.framework; sourceTree = "<group>"; };
 		B06E8F9C207AD3310030408C /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		B06E8FA1207AF2890030408C /* VCListingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCListingTableViewController.swift; sourceTree = "<group>"; };
+		B0DD52C1207EB90D00A70BBA /* WaterQualityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterQualityViewController.swift; sourceTree = "<group>"; };
+		B0DD52C2207EB90D00A70BBA /* WaterQualityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WaterQualityViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 		B06E8F8F207AA9220030408C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B0DD52C5207EB91200A70BBA /* Water Quality */,
 				B06E8FA1207AF2890030408C /* VCListingTableViewController.swift */,
 				B06E8F7F207AA8920030408C /* SampleViewController.swift */,
 				B06E8F90207AAA2A0030408C /* SampleViewController.xib */,
@@ -102,6 +107,15 @@
 				B06E8F9C207AD3310030408C /* Person.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B0DD52C5207EB91200A70BBA /* Water Quality */ = {
+			isa = PBXGroup;
+			children = (
+				B0DD52C1207EB90D00A70BBA /* WaterQualityViewController.swift */,
+				B0DD52C2207EB90D00A70BBA /* WaterQualityViewController.xib */,
+			);
+			path = "Water Quality";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B06E8F88207AA8940030408C /* LaunchScreen.storyboard in Resources */,
+				B0DD52C4207EB90D00A70BBA /* WaterQualityViewController.xib in Resources */,
 				B06E8F91207AAA2A0030408C /* SampleViewController.xib in Resources */,
 				B06E8F85207AA8940030408C /* Assets.xcassets in Resources */,
 				B06E8F95207AAAD40030408C /* SampleTableViewController.xib in Resources */,
@@ -212,6 +227,7 @@
 				B06E8F7E207AA8920030408C /* AppDelegate.swift in Sources */,
 				B06E8FA2207AF2890030408C /* VCListingTableViewController.swift in Sources */,
 				B06E8F9D207AD3310030408C /* Person.swift in Sources */,
+				B0DD52C3207EB90D00A70BBA /* WaterQualityViewController.swift in Sources */,
 				B06E8F94207AAAD40030408C /* SampleTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,7 +363,7 @@
 		B06E8F8D207AA8940030408C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TNUBBXS5DX;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -370,7 +386,7 @@
 		B06E8F8E207AA8940030408C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TNUBBXS5DX;
 				FRAMEWORK_SEARCH_PATHS = (

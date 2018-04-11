@@ -15,7 +15,8 @@ class VCListingTableViewController: UITableViewController {
         let title: String
     }
 
-    let vcs = [VCItem(vcClass: SampleTableViewController.self, title: "Sample Table View Controller"),
+    let vcs = [VCItem(vcClass: WaterQualityViewController.self, title: "Water Quality"),
+               VCItem(vcClass: SampleTableViewController.self, title: "Sample Table View Controller"),
                VCItem(vcClass: SampleViewController.self, title: "Sample View Controller")]
 
     init() {
