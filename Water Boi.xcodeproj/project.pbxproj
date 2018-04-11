@@ -21,6 +21,9 @@
 		B0DD52C4207EB90D00A70BBA /* WaterQualityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0DD52C2207EB90D00A70BBA /* WaterQualityViewController.xib */; };
 		B0DD52C9207EC18600A70BBA /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD52C7207EC18600A70BBA /* HeaderTableViewCell.swift */; };
 		B0DD52CA207EC18600A70BBA /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0DD52C8207EC18600A70BBA /* HeaderTableViewCell.xib */; };
+		B0DD52CD207ECBC000A70BBA /* ComplaintTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD52CB207ECBC000A70BBA /* ComplaintTableViewCell.swift */; };
+		B0DD52CE207ECBC000A70BBA /* ComplaintTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0DD52CC207ECBC000A70BBA /* ComplaintTableViewCell.xib */; };
+		B0DD52D0207ECC2400A70BBA /* Compaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD52CF207ECC2400A70BBA /* Compaint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		B0DD52C2207EB90D00A70BBA /* WaterQualityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WaterQualityViewController.xib; sourceTree = "<group>"; };
 		B0DD52C7207EC18600A70BBA /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		B0DD52C8207EC18600A70BBA /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
+		B0DD52CB207ECBC000A70BBA /* ComplaintTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintTableViewCell.swift; sourceTree = "<group>"; };
+		B0DD52CC207ECBC000A70BBA /* ComplaintTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComplaintTableViewCell.xib; sourceTree = "<group>"; };
+		B0DD52CF207ECC2400A70BBA /* Compaint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compaint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				B06E8F9C207AD3310030408C /* Person.swift */,
+				B0DD52CF207ECC2400A70BBA /* Compaint.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -128,6 +135,8 @@
 			children = (
 				B0DD52C7207EC18600A70BBA /* HeaderTableViewCell.swift */,
 				B0DD52C8207EC18600A70BBA /* HeaderTableViewCell.xib */,
+				B0DD52CB207ECBC000A70BBA /* ComplaintTableViewCell.swift */,
+				B0DD52CC207ECBC000A70BBA /* ComplaintTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -196,6 +205,7 @@
 				B0DD52C4207EB90D00A70BBA /* WaterQualityViewController.xib in Resources */,
 				B06E8F91207AAA2A0030408C /* SampleViewController.xib in Resources */,
 				B06E8F85207AA8940030408C /* Assets.xcassets in Resources */,
+				B0DD52CE207ECBC000A70BBA /* ComplaintTableViewCell.xib in Resources */,
 				B0DD52CA207EC18600A70BBA /* HeaderTableViewCell.xib in Resources */,
 				B06E8F95207AAAD40030408C /* SampleTableViewController.xib in Resources */,
 			);
@@ -239,11 +249,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B06E8F80207AA8920030408C /* SampleViewController.swift in Sources */,
+				B0DD52CD207ECBC000A70BBA /* ComplaintTableViewCell.swift in Sources */,
 				B06E8F7E207AA8920030408C /* AppDelegate.swift in Sources */,
 				B06E8FA2207AF2890030408C /* VCListingTableViewController.swift in Sources */,
 				B0DD52C9207EC18600A70BBA /* HeaderTableViewCell.swift in Sources */,
 				B06E8F9D207AD3310030408C /* Person.swift in Sources */,
 				B0DD52C3207EB90D00A70BBA /* WaterQualityViewController.swift in Sources */,
+				B0DD52D0207ECC2400A70BBA /* Compaint.swift in Sources */,
 				B06E8F94207AAAD40030408C /* SampleTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

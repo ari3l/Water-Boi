@@ -13,6 +13,7 @@ class WaterQualityViewController: UIViewController {
     @IBOutlet weak var waterTableView: UITableView!
 
     private let reUse: String = "reUse"
+    private let reUsecell: String = "reUsecell"
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -30,6 +31,9 @@ class WaterQualityViewController: UIViewController {
 
         let nib = UINib(nibName: "HeaderTableViewCell", bundle: nil)
         waterTableView.register(nib, forCellReuseIdentifier: reUse)
+
+        let nib2 = UINib(nibName: "ComplaintTableViewCell", bundle: nil)
+        waterTableView.register(nib2, forCellReuseIdentifier: reUsecell)
 
         waterTableView.dataSource = self
     }
@@ -54,14 +58,22 @@ class WaterQualityViewController: UIViewController {
 extension WaterQualityViewController : UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reUse, for: indexPath)
-        return cell
+
+        if indexPath.section == 0 {
+            return tableView.dequeueReusableCell(withIdentifier: reUse, for: indexPath)
+        } else {
+            return tableView.dequeueReusableCell(withIdentifier: reUsecell, for: indexPath)
+        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if section == 0 {
+            return 1
+        }
+
+        return 22
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
 }
