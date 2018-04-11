@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
 
-        let rootViewController = VCListingTableViewController()
+        let rootViewController = WaterQualityViewController()
 
         let navigationController = UINavigationController(rootViewController: rootViewController)
 

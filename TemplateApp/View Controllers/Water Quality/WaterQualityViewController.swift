@@ -10,6 +10,10 @@ import UIKit
 
 class WaterQualityViewController: UIViewController {
 
+    @IBOutlet weak var waterTableView: UITableView!
+
+    private let reUse: String = "reUse"
+
     init() {
         super.init(nibName: nil, bundle: nil)
         self.title = "Around Me"
@@ -23,6 +27,11 @@ class WaterQualityViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+
+        let nib = UINib(nibName: "HeaderTableViewCell", bundle: nil)
+        waterTableView.register(nib, forCellReuseIdentifier: reUse)
+
+        waterTableView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,4 +49,19 @@ class WaterQualityViewController: UIViewController {
     }
     */
 
+}
+
+extension WaterQualityViewController : UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reUse, for: indexPath)
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
 }

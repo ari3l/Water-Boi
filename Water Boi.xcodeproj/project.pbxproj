@@ -19,6 +19,8 @@
 		B06E8FA2207AF2890030408C /* VCListingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06E8FA1207AF2890030408C /* VCListingTableViewController.swift */; };
 		B0DD52C3207EB90D00A70BBA /* WaterQualityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD52C1207EB90D00A70BBA /* WaterQualityViewController.swift */; };
 		B0DD52C4207EB90D00A70BBA /* WaterQualityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0DD52C2207EB90D00A70BBA /* WaterQualityViewController.xib */; };
+		B0DD52C9207EC18600A70BBA /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD52C7207EC18600A70BBA /* HeaderTableViewCell.swift */; };
+		B0DD52CA207EC18600A70BBA /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0DD52C8207EC18600A70BBA /* HeaderTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		B06E8FA1207AF2890030408C /* VCListingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCListingTableViewController.swift; sourceTree = "<group>"; };
 		B0DD52C1207EB90D00A70BBA /* WaterQualityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterQualityViewController.swift; sourceTree = "<group>"; };
 		B0DD52C2207EB90D00A70BBA /* WaterQualityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WaterQualityViewController.xib; sourceTree = "<group>"; };
+		B0DD52C7207EC18600A70BBA /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		B0DD52C8207EC18600A70BBA /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,10 +116,20 @@
 		B0DD52C5207EB91200A70BBA /* Water Quality */ = {
 			isa = PBXGroup;
 			children = (
+				B0DD52C6207EC16C00A70BBA /* Cells */,
 				B0DD52C1207EB90D00A70BBA /* WaterQualityViewController.swift */,
 				B0DD52C2207EB90D00A70BBA /* WaterQualityViewController.xib */,
 			);
 			path = "Water Quality";
+			sourceTree = "<group>";
+		};
+		B0DD52C6207EC16C00A70BBA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B0DD52C7207EC18600A70BBA /* HeaderTableViewCell.swift */,
+				B0DD52C8207EC18600A70BBA /* HeaderTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +196,7 @@
 				B0DD52C4207EB90D00A70BBA /* WaterQualityViewController.xib in Resources */,
 				B06E8F91207AAA2A0030408C /* SampleViewController.xib in Resources */,
 				B06E8F85207AA8940030408C /* Assets.xcassets in Resources */,
+				B0DD52CA207EC18600A70BBA /* HeaderTableViewCell.xib in Resources */,
 				B06E8F95207AAAD40030408C /* SampleTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,6 +241,7 @@
 				B06E8F80207AA8920030408C /* SampleViewController.swift in Sources */,
 				B06E8F7E207AA8920030408C /* AppDelegate.swift in Sources */,
 				B06E8FA2207AF2890030408C /* VCListingTableViewController.swift in Sources */,
+				B0DD52C9207EC18600A70BBA /* HeaderTableViewCell.swift in Sources */,
 				B06E8F9D207AD3310030408C /* Person.swift in Sources */,
 				B0DD52C3207EB90D00A70BBA /* WaterQualityViewController.swift in Sources */,
 				B06E8F94207AAAD40030408C /* SampleTableViewController.swift in Sources */,
