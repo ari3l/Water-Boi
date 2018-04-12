@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import CoreLocation
 struct Complaint {
 
     /*
@@ -27,6 +27,7 @@ struct Complaint {
     var closedDate: Date
     var complaintType: String
     var complaint: String
+    var coordinate: CLLocationCoordinate2D
 //    var descriptor: String
 //    var zip: String
     var address: String
@@ -42,11 +43,14 @@ struct Complaint {
             let createdDateString = json["Created Date"] as? String,
             let closedDateString = json["Closed Date"] as? String,
             let closedDate = dateFormatter.date(from: closedDateString),
-            let createdDate = dateFormatter.date(from: createdDateString)
+            let createdDate = dateFormatter.date(from: createdDateString),
+            let long = json["Longitude"] as? Double,
+            let lat = json["Latitude"] as? Double
         else {
             return nil
         }
 
+        self.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
         self.uniqueId = uniqueId
         self.complaintType = complaintType
         self.complaint = complaint

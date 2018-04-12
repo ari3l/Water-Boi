@@ -26,6 +26,8 @@
 		B0DD52D0207ECC2400A70BBA /* Compaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD52CF207ECC2400A70BBA /* Compaint.swift */; };
 		B0DD52D7207EEC1200A70BBA /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD52D6207EEC1100A70BBA /* LocationHelper.swift */; };
 		B0DD52DC207EF62100A70BBA /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD52DB207EF62100A70BBA /* APIClient.swift */; };
+		B0DD52DE207F2BDB00A70BBA /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DD52DD207F2BDA00A70BBA /* MBProgressHUD.framework */; };
+		B0DD52E0207F2DAA00A70BBA /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD52DF207F2DAA00A70BBA /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		B0DD52CF207ECC2400A70BBA /* Compaint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compaint.swift; sourceTree = "<group>"; };
 		B0DD52D6207EEC1100A70BBA /* LocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		B0DD52DB207EF62100A70BBA /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		B0DD52DD207F2BDA00A70BBA /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
+		B0DD52DF207F2DAA00A70BBA /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0DD52DE207F2BDB00A70BBA /* MBProgressHUD.framework in Frameworks */,
 				B06E8F99207AD29E0030408C /* Dwifft.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +92,7 @@
 				B0DD52DB207EF62100A70BBA /* APIClient.swift */,
 				B06E8F7D207AA8920030408C /* AppDelegate.swift */,
 				B0DD52D6207EEC1100A70BBA /* LocationHelper.swift */,
+				B0DD52DF207F2DAA00A70BBA /* Utils.swift */,
 				B06E8F9B207AD3150030408C /* Models */,
 				B06E8F8F207AA9220030408C /* View Controllers */,
 				B06E8F84207AA8940030408C /* Assets.xcassets */,
@@ -112,6 +118,7 @@
 		B06E8F97207AD29E0030408C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B0DD52DD207F2BDA00A70BBA /* MBProgressHUD.framework */,
 				B06E8F98207AD29E0030408C /* Dwifft.framework */,
 			);
 			name = Frameworks;
@@ -240,6 +247,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Dwifft.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MBProgressHUD.framework",
 			);
 			outputPaths = (
 			);
@@ -265,6 +273,7 @@
 				B0DD52C3207EB90D00A70BBA /* WaterQualityViewController.swift in Sources */,
 				B0DD52D0207ECC2400A70BBA /* Compaint.swift in Sources */,
 				B06E8F94207AAAD40030408C /* SampleTableViewController.swift in Sources */,
+				B0DD52E0207F2DAA00A70BBA /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

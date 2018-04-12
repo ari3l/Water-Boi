@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreLocation
+import MBProgressHUD
 
-class WaterQualityViewController: UIViewController {
+class WaterQualityViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var waterTableView: UITableView!
 
@@ -18,6 +19,7 @@ class WaterQualityViewController: UIViewController {
     private var location: CLLocationCoordinate2D?
     private var placeName: NSString?
     private var cityName: NSString?
+    private var complaints: [Complaint] = []
 //    private var refreshControl: UIRefreshControl
 
     lazy var refreshControl: UIRefreshControl = {
@@ -28,7 +30,7 @@ class WaterQualityViewController: UIViewController {
 
     init() {
         super.init(nibName: nil, bundle: nil)
-        self.title = "Around Me"
+        self.title = "Water Boi"
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -47,6 +49,8 @@ class WaterQualityViewController: UIViewController {
         waterTableView.register(nib2, forCellReuseIdentifier: reUsecell)
 
         waterTableView.dataSource = self
+        waterTableView.delegate = self
+        
         waterTableView.addSubview(refreshControl)
     }
 
@@ -56,12 +60,15 @@ class WaterQualityViewController: UIViewController {
     }
 
     @objc func fetchLocationAndData() {
+        refreshControl.beginRefreshing()
         LocationHelper.sharedInstance.getCurrentLocation { [weak self] (response) in
             switch response {
             case .dennied:
                 self?.showError(message: "Could not determine location")
+                self?.refreshControl.endRefreshing()
             case .error:
                 self?.showError(message: "Could not determine location")
+                self?.refreshControl.endRefreshing()
             case .success(let currentLocation):
 //                self?.location = currentLocation.coordinate
                 guard let sself = self else { return }
@@ -76,10 +83,20 @@ class WaterQualityViewController: UIViewController {
     }
 
     func fetchData(_ lat: Double, long: Double) {
-        APIClient.shared.fetchComplaints(lat: lat, long: long, completionBlock: { (complaints) in
-            //
+        APIClient.shared.fetchComplaints(lat: lat, long: long, completionBlock: { [weak self] (complaints) in
+
+            DispatchQueue.main.async {
+                self?.complaints = complaints
+                self?.refreshControl.endRefreshing()
+                self?.waterTableView.reloadData()
+            }
+
         }) { [weak self] (error) in
-            self?.showError(message: error)
+
+            DispatchQueue.main.async {
+                self?.showError(message: error)
+                self?.refreshControl.endRefreshing()
+            }
         }
     }
 
@@ -172,17 +189,34 @@ extension WaterQualityViewController : UITableViewDataSource {
             if let cell = cell as? HeaderTableViewCell {
                 if let placeName = self.placeName, let cityName = self.cityName {
                     cell.placeLabel.text = "\(placeName), \(cityName)"
+                    cell.complaintsNearbyLabel.text = "\(self.complaints.count)"
                 }
             }
             return cell
 
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: reUsecell, for: indexPath)
+
+            let complaint = self.complaints[indexPath.row]
+
             if let cell = cell as? ComplaintTableViewCell {
-                cell.complaintTitleLabel.text = "Title Goes here"
-                cell.createdLabel.text = "A long time age"
-                cell.addressLabel.text = "201 Street strre"
-                cell.distanceLabel.text = "10 miles away"
+                cell.complaintTitleLabel.text = complaint.complaint
+
+                if let agoLabel = Utils.timeAgoStringFromDate(date: complaint.createdDate) {
+                    cell.createdLabel.text = agoLabel
+                }
+
+                if let myCoords = self.location {
+                    let myLocation = CLLocation(latitude: myCoords.latitude, longitude: myCoords.longitude)
+                    let otherLocation = CLLocation(latitude: complaint.coordinate.latitude, longitude: complaint.coordinate.longitude)
+
+                    let meters = myLocation.distance(from: otherLocation)
+
+                    cell.distanceLabel.text = "\(Int(meters)) meters away"
+                }
+
+
+                cell.addressLabel.text = complaint.address
             }
             return cell
         }
@@ -193,9 +227,14 @@ extension WaterQualityViewController : UITableViewDataSource {
             return 1
         }
 
-        return 22
+        return self.complaints.count
     }
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
