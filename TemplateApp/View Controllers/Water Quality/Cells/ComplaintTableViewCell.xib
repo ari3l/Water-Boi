@@ -21,7 +21,7 @@
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-2" translatesAutoresizingMaskIntoConstraints="NO" id="5dL-cf-eZe">
                         <rect key="frame" x="8" y="8" width="278" height="61.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Shitty Water Found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xk7-lZ-Iie">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Bad Water Found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xk7-lZ-Iie">
                                 <rect key="frame" x="0.0" y="0.0" width="278" height="22"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -68,6 +68,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addressLabel" destination="zlo-fQ-Gze" id="zWw-Tt-H1o"/>
+                <outlet property="complaintTitleLabel" destination="Xk7-lZ-Iie" id="PEM-PH-mmQ"/>
+                <outlet property="createdLabel" destination="6ZZ-Wl-8iw" id="XBb-7d-n5E"/>
+                <outlet property="distanceLabel" destination="lxG-da-Gze" id="3oE-oS-19Z"/>
+            </connections>
             <point key="canvasLocation" x="25" y="133"/>
         </tableViewCell>
     </objects>

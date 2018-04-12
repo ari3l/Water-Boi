@@ -64,7 +64,6 @@ class WaterQualityViewController: UIViewController {
     }
 
     func fetchData(_ lat: Double, long: Double) {
-        
     }
 
     func fetchCityName() {
@@ -161,7 +160,14 @@ extension WaterQualityViewController : UITableViewDataSource {
             return cell
 
         } else {
-            return tableView.dequeueReusableCell(withIdentifier: reUsecell, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: reUsecell, for: indexPath)
+            if let cell = cell as? ComplaintTableViewCell {
+                cell.complaintTitleLabel.text = "Title Goes here"
+                cell.createdLabel.text = "A long time age"
+                cell.addressLabel.text = "201 Street strre"
+                cell.distanceLabel.text = "10 miles away"
+            }
+            return cell
         }
     }
 

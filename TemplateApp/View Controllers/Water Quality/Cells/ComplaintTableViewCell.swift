@@ -10,6 +10,11 @@ import UIKit
 
 class ComplaintTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var complaintTitleLabel: UILabel!
+    @IBOutlet weak var createdLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +24,5 @@ class ComplaintTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
+    }    
 }
