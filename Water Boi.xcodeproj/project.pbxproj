@@ -24,6 +24,8 @@
 		B0DD52CD207ECBC000A70BBA /* ComplaintTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD52CB207ECBC000A70BBA /* ComplaintTableViewCell.swift */; };
 		B0DD52CE207ECBC000A70BBA /* ComplaintTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0DD52CC207ECBC000A70BBA /* ComplaintTableViewCell.xib */; };
 		B0DD52D0207ECC2400A70BBA /* Compaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD52CF207ECC2400A70BBA /* Compaint.swift */; };
+		B0DD52D7207EEC1200A70BBA /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD52D6207EEC1100A70BBA /* LocationHelper.swift */; };
+		B0DD52DC207EF62100A70BBA /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD52DB207EF62100A70BBA /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		B0DD52CB207ECBC000A70BBA /* ComplaintTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintTableViewCell.swift; sourceTree = "<group>"; };
 		B0DD52CC207ECBC000A70BBA /* ComplaintTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComplaintTableViewCell.xib; sourceTree = "<group>"; };
 		B0DD52CF207ECC2400A70BBA /* Compaint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compaint.swift; sourceTree = "<group>"; };
+		B0DD52D6207EEC1100A70BBA /* LocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
+		B0DD52DB207EF62100A70BBA /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +84,9 @@
 		B06E8F7C207AA8920030408C /* TemplateApp */ = {
 			isa = PBXGroup;
 			children = (
+				B0DD52DB207EF62100A70BBA /* APIClient.swift */,
 				B06E8F7D207AA8920030408C /* AppDelegate.swift */,
+				B0DD52D6207EEC1100A70BBA /* LocationHelper.swift */,
 				B06E8F9B207AD3150030408C /* Models */,
 				B06E8F8F207AA9220030408C /* View Controllers */,
 				B06E8F84207AA8940030408C /* Assets.xcassets */,
@@ -252,6 +258,8 @@
 				B0DD52CD207ECBC000A70BBA /* ComplaintTableViewCell.swift in Sources */,
 				B06E8F7E207AA8920030408C /* AppDelegate.swift in Sources */,
 				B06E8FA2207AF2890030408C /* VCListingTableViewController.swift in Sources */,
+				B0DD52D7207EEC1200A70BBA /* LocationHelper.swift in Sources */,
+				B0DD52DC207EF62100A70BBA /* APIClient.swift in Sources */,
 				B0DD52C9207EC18600A70BBA /* HeaderTableViewCell.swift in Sources */,
 				B06E8F9D207AD3310030408C /* Person.swift in Sources */,
 				B0DD52C3207EB90D00A70BBA /* WaterQualityViewController.swift in Sources */,

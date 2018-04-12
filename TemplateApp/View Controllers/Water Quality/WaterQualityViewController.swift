@@ -38,6 +38,29 @@ class WaterQualityViewController: UIViewController {
         waterTableView.dataSource = self
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchLocationAndData()
+    }
+
+    func fetchLocationAndData() {
+        LocationHelper.sharedInstance.getCurrentLocation { [weak self] (response) in
+            switch response {
+            case .dennied:
+                self?.showError(message: "Could not determine location")
+            case .error:
+                self?.showError(message: "Could not determine location")
+            case .success(let currentLocation):
+
+                self?.fetchData(currentLocation.coordinate.latitude, long: currentLocation.coordinate.longitude)
+            }
+        }
+    }
+
+    func fetchData(_ lat: Double, long: Double) {
+        
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -52,6 +75,13 @@ class WaterQualityViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+    func showError(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: false, completion: nil)
+    }
 
 }
 
