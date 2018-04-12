@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class WaterQualityViewController: UIViewController {
 
@@ -14,6 +15,9 @@ class WaterQualityViewController: UIViewController {
 
     private let reUse: String = "reUse"
     private let reUsecell: String = "reUsecell"
+    private var location: CLLocationCoordinate2D?
+    private var placeName: NSString?
+    private var cityName: NSString?
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -53,6 +57,8 @@ class WaterQualityViewController: UIViewController {
             case .success(let currentLocation):
 
                 self?.fetchData(currentLocation.coordinate.latitude, long: currentLocation.coordinate.longitude)
+                self?.location = currentLocation.coordinate
+                self?.fetchCityName()
             }
         }
     }
@@ -61,6 +67,62 @@ class WaterQualityViewController: UIViewController {
         
     }
 
+    func fetchCityName() {
+        guard let mylocation = self.location else {
+            return
+        }
+
+        let geoCoder = CLGeocoder()
+        let location = CLLocation(latitude: mylocation.latitude, longitude: mylocation.longitude)
+        geoCoder.reverseGeocodeLocation(location)
+        {
+            (placemarks, error) -> Void in
+
+            let placeArray = placemarks as [CLPlacemark]!
+
+            // Place details
+            var placeMark: CLPlacemark!
+            placeMark = placeArray?[0]
+
+            // Address dictionary
+            print(placeMark.addressDictionary)
+
+            // Location name
+            if let locationName = placeMark.addressDictionary?["Name"] as? NSString
+            {
+                print(locationName)
+            }
+
+            // Street address // THIS
+            if let street = placeMark.addressDictionary?["Thoroughfare"] as? NSString
+            {
+                print(street)
+                self.placeName = street
+
+            }
+
+            // City // THIS
+            if let city = placeMark.addressDictionary?["City"] as? NSString
+            {
+                print(city)
+                self.cityName = city
+            }
+
+            // Zip code
+            if let zip = placeMark.addressDictionary?["ZIP"] as? NSString
+            {
+                print(zip)
+            }
+
+            // Country
+            if let country = placeMark.addressDictionary?["Country"] as? NSString
+            {
+                print(country)
+            }
+
+            self.waterTableView.reloadSections([0], with: .automatic)
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -90,7 +152,14 @@ extension WaterQualityViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         if indexPath.section == 0 {
-            return tableView.dequeueReusableCell(withIdentifier: reUse, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: reUse, for: indexPath)
+            if let cell = cell as? HeaderTableViewCell {
+                if let placeName = self.placeName, let cityName = self.cityName {
+                    cell.placeLabel.text = "\(placeName), \(cityName)"
+                }
+            }
+            return cell
+
         } else {
             return tableView.dequeueReusableCell(withIdentifier: reUsecell, for: indexPath)
         }

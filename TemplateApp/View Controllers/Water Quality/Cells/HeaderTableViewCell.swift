@@ -10,6 +10,10 @@ import UIKit
 
 class HeaderTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var placeLabel: UILabel!
+    @IBOutlet weak var complaintsNearbyLabel: UILabel!
+    @IBOutlet weak var mostRecentComplaintLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

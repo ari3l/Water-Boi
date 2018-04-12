@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="80.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York, NY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MI1-S8-kd2">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MI1-S8-kd2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="38"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="38" id="KwW-NT-jK8"/>
@@ -92,6 +92,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="complaintsNearbyLabel" destination="K13-rj-neH" id="iwY-vH-tW2"/>
+                <outlet property="mostRecentComplaintLabel" destination="nMn-oM-35i" id="o3j-Fb-d5b"/>
+                <outlet property="placeLabel" destination="MI1-S8-kd2" id="m68-fy-0g4"/>
+            </connections>
             <point key="canvasLocation" x="40" y="77.5"/>
         </tableViewCell>
     </objects>
