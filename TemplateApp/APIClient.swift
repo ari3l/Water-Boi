@@ -11,9 +11,10 @@ import Foundation
 class APIClient {
     static let shared: APIClient = APIClient()
 
-    private let apiURL = "http://6a4b3a09.ngrok.io/waterdata"
+    private let apiURL = "http://9a63fe00.ngrok.io/waterdata"
 
-    func fetchComplaints(lat: Double, long: Double) {
+    func fetchComplaints(lat: Double, long: Double, completionBlock: @escaping ([Complaint])-> Void, errorBlock: @escaping (String) -> Void) {
+        print("Startig req")
         guard let url = URL(string: apiURL + "?lat=\(lat)&long=\(long)") else {
             return
         }
@@ -24,14 +25,24 @@ class APIClient {
             }
 
             do {
-                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String] {
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? Array<Dictionary<String, Any>> {
+
+                    var arrComplains: [Complaint] = []
+                    for dict in json {
+                        if let comp = Complaint(json: dict) {
+                            arrComplains.append(comp)
+                        }
+                    }
+
+                    completionBlock(arrComplains)
 
                 } else {
                     // Error
+                    errorBlock("There was an error getting the data")
                 }
 
-            } catch let error as NSError {
-                print("Failed to load: \(error.localizedDescription)")
+            } catch let error {
+                errorBlock(error.localizedDescription)
             }
 
         }.resume()

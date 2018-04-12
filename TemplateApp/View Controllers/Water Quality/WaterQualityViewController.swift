@@ -18,6 +18,13 @@ class WaterQualityViewController: UIViewController {
     private var location: CLLocationCoordinate2D?
     private var placeName: NSString?
     private var cityName: NSString?
+//    private var refreshControl: UIRefreshControl
+
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(self.fetchLocationAndData), for: UIControlEvents.valueChanged)
+        return refreshControl
+    }()
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -40,6 +47,7 @@ class WaterQualityViewController: UIViewController {
         waterTableView.register(nib2, forCellReuseIdentifier: reUsecell)
 
         waterTableView.dataSource = self
+        waterTableView.addSubview(refreshControl)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -47,7 +55,7 @@ class WaterQualityViewController: UIViewController {
         fetchLocationAndData()
     }
 
-    func fetchLocationAndData() {
+    @objc func fetchLocationAndData() {
         LocationHelper.sharedInstance.getCurrentLocation { [weak self] (response) in
             switch response {
             case .dennied:
@@ -55,15 +63,24 @@ class WaterQualityViewController: UIViewController {
             case .error:
                 self?.showError(message: "Could not determine location")
             case .success(let currentLocation):
+//                self?.location = currentLocation.coordinate
+                guard let sself = self else { return }
+                let location = CLLocationCoordinate2D(latitude: 40.7690234883499, longitude: -73.9822995943481)
 
-                self?.fetchData(currentLocation.coordinate.latitude, long: currentLocation.coordinate.longitude)
-                self?.location = currentLocation.coordinate
-                self?.fetchCityName()
+                sself.fetchData(location.latitude, long: location.longitude)
+                sself.location = location
+
+                sself.fetchCityName()
             }
         }
     }
 
     func fetchData(_ lat: Double, long: Double) {
+        APIClient.shared.fetchComplaints(lat: lat, long: long, completionBlock: { (complaints) in
+            //
+        }) { [weak self] (error) in
+            self?.showError(message: error)
+        }
     }
 
     func fetchCityName() {
