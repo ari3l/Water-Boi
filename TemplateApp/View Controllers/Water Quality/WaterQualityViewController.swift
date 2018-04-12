@@ -50,7 +50,7 @@ class WaterQualityViewController: UIViewController, UITableViewDelegate {
 
         waterTableView.dataSource = self
         waterTableView.delegate = self
-        
+
         waterTableView.addSubview(refreshControl)
     }
 
@@ -236,5 +236,14 @@ extension WaterQualityViewController : UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
+        let complaint = self.complaints[indexPath.row]
+
+        let message = "Complaint: \(complaint.complaint) \n Created: \(complaint.createdDate) Closed: \(complaint.closedDate) \n Address: \(complaint.address) \n ID: \(complaint.uniqueId)"
+
+        let alertController = UIAlertController(title: complaint.complaintType, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(action)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
